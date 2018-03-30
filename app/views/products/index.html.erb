@@ -1,0 +1,23 @@
+<h1>INDEX</h1>
+
+
+
+  <!-- 1) homepage adds items to the cart when they're submitted via its form
+     Failure/Error: fill_in 'product', with: 'kumquats' -->
+<%=form_tag('/products') do%>
+<!-- <%%> -->
+<!-- <input type="text" name="product" value=""> -->
+  <!-- < %= label_tag 'product' %> -->
+  <%= text_field_tag 'product' %>
+  <%= submit_tag "add to cart" %>
+<%end%>
+
+
+    <!-- < %= label_tag('cat[name]', "Name") %>
+    < %= text_field_tag('cat[name]') %> -->
+<%if cart.size > 0
+%>
+<%cart.each do |item|%>
+  <li> <%=item %> </li>
+<%end%>
+<%end%>
